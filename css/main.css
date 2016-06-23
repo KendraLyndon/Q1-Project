@@ -1,0 +1,75 @@
+@font-face{
+  font-family: 'Gidole';
+  src: url('Gidolinya-Regular.otf');
+}
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Gidole';
+}
+body{
+  background-image: url('https://kanwalkwilltravel.files.wordpress.com/2014/06/seville-10.jpg');
+  background-size: 1700px;
+  background-position: 0 -370px;
+  background-repeat: no-repeat;
+  position: relative;
+}
+main {
+  height: 70vh;
+  width: 60vw;
+  margin: auto;
+  margin-top: 14vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+h1 {
+  font-size: 97px;
+  color: #4d4d4d;
+}
+h2{
+  font-size: 35px;
+  color: #4d4d4d;
+}
+a {
+  text-decoration: none;
+  font-size: 45px;
+  /*color: #525AFF;*/
+  color: #9E0D18;
+  height: 50px;
+  width: 368px;
+  text-align: center;
+  font-weight: bold;
+}
+p {
+  width: 363px;
+  text-align: justify;
+  font-size: 19px;
+  color: #4d4d4d;
+}
+footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+#less_transparent {
+  height: 86vh;
+  width: 75vw;
+  margin: auto;
+  margin-top: -79vh;
+  background-color: white;
+  opacity: .9;
+}
+#transparent {
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  opacity: .6;
+  margin: auto;
+  margin-top: -93vh;
+}
