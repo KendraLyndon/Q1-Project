@@ -7,16 +7,23 @@
 </head>
 <body>
   <header>
+    <h1>Las Tapas Mejores</h1>
+    <h2>Zoom on a city to find the best local tapas</h2>
+    <h2>Click on a pin to see restaurant info</h2>
   </header>
   <main>
     <div id='map'></div>
-    <div id='info'></div>
+    <div id='info'>
+    </div>
+    <div id='transparent'></div>
+    <div id='less_transparent'></div>
   </main>
   <footer>
+    <small>&copy Kendra Lyndon 2016</small>
   </footer>
   <script src="https://code.jquery.com/jquery-3.0.0.js" integrity="sha256-jrPLZ+8vDxt2FnE1zvZXCkCcebI/C8Dt5xyaQBjxQIo=" crossorigin="anonymous"></script>
   <script type='text/javascript' src='javascript/map.js'></script>
   <script type='text/javascript' src='javascript/search.js'></script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuNZFnztsemUai7NSIdKMb1igGVPQCJ48&callback=initMap"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuNZFnztsemUai7NSIdKMb1igGVPQCJ48&callback=initMap&libraries=places"></script>
 </body>
 </html>

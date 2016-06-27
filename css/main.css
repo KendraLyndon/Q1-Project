@@ -44,6 +44,13 @@ a {
   text-align: center;
   font-weight: bold;
 }
+#pic{
+  background-image: url('http://www.barcelonatapas.com/wp-content/uploads/2014/10/tapas-all-day.jpg');
+  background-size: 363px;
+}
+img{
+  width: 400px;
+}
 p {
   width: 363px;
   text-align: justify;

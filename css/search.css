@@ -7,37 +7,104 @@
   padding: 0;
   font-family: 'Gidole';
 }
-body{
+body {
   margin: -5px;
+  background-image: url('https://kanwalkwilltravel.files.wordpress.com/2014/06/seville-10.jpg');
+  background-size: 1675px;
+  background-position: 0 -370px;
+  background-repeat: no-repeat;
+  position: relative;
 }
-header{
+header {
   width: 100%;
   height: 4em;
-  background-color: red;
+  border-bottom: 3px solid #4d4d4d;
+  position: relative;
+  z-index: 10;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+h1{
+  margin-left: 2vw;
+  font-size: 40px;
+}
+h2{
+  margin-left: 10vw;
+  font-size: 25px;
 }
 #map{
   height: 92vh;
   width: 60%;
   border: 0;
+  position: relative;
+  z-index: 10;
   float: left;
+  margin-top: 8vh;
+  border-right: 3px solid #4d4d4d;
 }
-#info{
+#info {
   height: 92vh;
-  width: 40%;
+  width: 39%;
+  position: relative;
+  z-index: 10;
   float: left;
-  background-color: green;
+  margin-top: 8vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.test{
-  height: 100px;
-  width: 100px;
+p{
+  margin-left: 5vw;
+  margin-top: 5vh;
+  border-radius: .5;
+  font-size: 25px;
+  width: 400px;
+}
+#name{
+  font-size: 40px;
+}
+a{
+  margin-left: 5vw;
+  margin-top: 5vh;
+  font-size: 25px;
+  text-decoration: none;
+  color: #9E0D18;
+}
+#transparent {
+  height: 105vh;
+  width: 100vw;
   background-color: white;
+  opacity: .6;
+  margin: auto;
+  margin-top: -8vh;
+}
+#less_transparent {
+  height: 84vh;
+  width: 33vw;
+  margin-left: 64%;
+  margin-top: -92vh;
+  background-color: white;
+  opacity: .9;
 }
 footer{
   height: 3em;
   width: 100%;
   right: 0;
-  background-color: orange;
+  margin-top: -10vh;
+  position: relative;
+  z-index: 10;
   clear: both;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #4d4d4d;
+}
+small{
+  font-size: 18px;
+  margin-left: 2vw;
+  color: white;
 }
 
 /*background-image: url('https://kanwalkwilltravel.files.wordpress.com/2014/06/seville-10.jpg');*/
