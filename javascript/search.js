@@ -136,7 +136,6 @@ function addMarkers(spain,data){
 }
 
 function updateRestaurant(element,data){
-  console.log(data);
   element.empty();
   var name = document.createElement('p');
   $(name).attr('id','name')
