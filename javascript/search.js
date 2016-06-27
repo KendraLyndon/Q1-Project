@@ -17,7 +17,7 @@ function initMap() {
         console.log(currCenter);
         $.when(findTapas()).then(function(data){
           console.log(('HELLO!!!!!!'));
-          geocodeLatLng(geocoder,spain,currCenter);
+          // geocodeLatLng(geocoder,spain,currCenter);
           addMarkers(spain,restaurants);
         })
       };
@@ -36,28 +36,22 @@ function addMap(){
   });
 }
 
-function geocodeLatLng(geocoder, spain,currCenter) {
-  var latlng = {lat: currCenter.lat, lng: currCenter.lng};
-  geocoder.geocode({'location': latlng}, function(results, status) {
-    if (status === google.maps.GeocoderStatus.OK) {
-      if (results[1]) {
-        console.log(results);
-        currentCity = results[8].formatted_address;
-        console.log('HIII!!!!!' currentCity);
-      } else {
-        window.alert('No results found');
-      }
-    } else {
-      window.alert('Geocoder failed due to: ' + status);
-    }
-  });
-}
-
-function jsFriendlyJSONStringify (s) {
-    return JSON.stringify(s).
-        replace(/\u2028/g, '\\u2028').
-        replace(/\u2029/g, '\\u2029');
-}
+// function geocodeLatLng(geocoder, spain,currCenter) {
+//   var latlng = {lat: currCenter.lat, lng: currCenter.lng};
+//   geocoder.geocode({'location': latlng}, function(results, status) {
+//     if (status === google.maps.GeocoderStatus.OK) {
+//       if (results[1]) {
+//         console.log(results);
+//         currentCity = results[8].formatted_address;
+//         console.log('HIII!!!!!'+currentCity);
+//       } else {
+//         window.alert('No results found');
+//       }
+//     } else {
+//       window.alert('Geocoder failed due to: ' + status);
+//     }
+//   });
+// }
 
 function addMarkers(spain,data){
   for(var i=0; i<data.length;i++){
