@@ -9,25 +9,6 @@ var googleKey = 'AIzaSyCuNZFnztsemUai7NSIdKMb1igGVPQCJ48';
 function initMap() {
   addMap();
   var geocoder = new google.maps.Geocoder;
-<<<<<<< HEAD
-
-  // $.when(findTapas()).then(function(data) {
-    spain.addListener('zoom_changed',function(){
-      if(spain.getZoom()===9){
-        currCenter = JSON.parse(JSON.stringify(spain.getCenter()));
-        console.log(currCenter);
-        $.when(findTapas()).then(function(data){
-          console.log(('HELLO!!!!!!'));
-          // geocodeLatLng(geocoder,spain,currCenter);
-          addMarkers(spain,restaurants);
-        })
-      };
-      if(spain.getZoom()<9){
-        clearMarkers()
-      };
-    });
-  // });
-=======
   spain.addListener('zoom_changed',function(){
     currCenter = JSON.parse(JSON.stringify(spain.getCenter()));
     geocodeLatLng(geocoder,spain,currCenter);
@@ -36,7 +17,6 @@ function initMap() {
     currCenter = JSON.parse(JSON.stringify(spain.getCenter()));
     geocodeLatLng(geocoder,spain,currCenter);
   });
->>>>>>> googlePlaces
 }
 
 function addMap(){
@@ -47,24 +27,6 @@ function addMap(){
   });
 }
 
-<<<<<<< HEAD
-// function geocodeLatLng(geocoder, spain,currCenter) {
-//   var latlng = {lat: currCenter.lat, lng: currCenter.lng};
-//   geocoder.geocode({'location': latlng}, function(results, status) {
-//     if (status === google.maps.GeocoderStatus.OK) {
-//       if (results[1]) {
-//         console.log(results);
-//         currentCity = results[8].formatted_address;
-//         console.log('HIII!!!!!'+currentCity);
-//       } else {
-//         window.alert('No results found');
-//       }
-//     } else {
-//       window.alert('Geocoder failed due to: ' + status);
-//     }
-//   });
-// }
-=======
 function geocodeLatLng(geocoder,spain,currCenter) {
   geocoder.geocode({'location': currCenter}, function(results, status) {
     if (status === google.maps.GeocoderStatus.OK) {
@@ -152,7 +114,6 @@ function editBusinesses(businesses){
     }
   }
 }
->>>>>>> googlePlaces
 
 function addMarkers(spain,data){
   for(var i=0; i<data.length;i++){
