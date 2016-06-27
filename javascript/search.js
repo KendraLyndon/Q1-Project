@@ -105,7 +105,6 @@ function findTapas(currentPlace){
   })
 }
 
-
 function editBusinesses(businesses){
   restaurants = [];
   for(var i=0;i<businesses.length;i++)
@@ -129,77 +128,30 @@ function addMarkers(spain,data){
     markers.push(marker);
     function markListener(label){
       marker.addListener('click', function() {
-        // getPlaceId(restaurants[Number(label)]);
-        
-        // console.log(restaurants[Number(label)]);
-        // updateRestaurant(info, restaurants[Number(label)]);
+        updateRestaurant(info, restaurants[Number(label)]);
       });
     }
     markListener(marker.label);
   }
 }
 
-function getPlaceId(data){
-  console.log(data.name);
-  console.log(typeof(data.name));
-  currCenter = JSON.parse(JSON.stringify(spain.getCenter()));
-  var request = {
-    location: currCenter,
-    radius: '100',
-    name: 'El Mini',
-    // keyword: data.name,
-    //the name parameter is too specific. if the name in googlemaps
-    //doesn't exactly match the yelp name, search will not yield results.
-    //Need to refactor for more general search?
-    // type: 'restaurant'
-  };
-  var service = new google.maps.places.PlacesService(spain);
-  service.nearbySearch(request, function(results, status) {
-    console.log('*****NEARBYSEARCH RUNNING******');
-    console.log(status);
-    console.log(request.location);
-    if (status == google.maps.places.PlacesServiceStatus.OK) {
-      console.log('results!!!!');
-      console.log(results);
-      for (var i = 0; i < results.length; i++) {
-        var place = results[i];
-        var id = place.place_id;
-        // placeDetailsByPlaceId(info, spain, id, data);
-        console.log('******'+id+'*********');
-      }
-    }
-  });
+function updateRestaurant(element,data){
+  console.log(data);
+  element.empty();
+  var name = document.createElement('p');
+  $(name).attr('id','name')
+  $(name).text(data.name);
+  var phone = document.createElement('p');
+  $(phone).text('phone: '+data.display_phone);
+  var address = document.createElement('p');
+  $(address).text('address: '+data.location.address[0]+', '+data.location.city);
+  var rating = document.createElement('p');
+  $(rating).text('rating: '+data.rating);
+  var link = document.createElement('a');
+  $(link).attr('href',data.url);
+  $(link).text('visit yelp page');
+  $(element).append(name,phone,address,rating,link);
 }
-
-function placeDetailsByPlaceId(element, spain, id, data) {
-  var request = {placeId: id};
-  var service = new google.maps.places.PlacesService(spain);
-  service.getDetails(request, function (place, status) {
-    if (status == google.maps.places.PlacesServiceStatus.OK) {
-      console.log(place);
-      element.empty();
-      var name = document.createElement('p');
-      $(name).text(place.name);
-      var phone = document.createElement('p');
-      $(phone).text('phone: '+place.formatted_phone_number);
-      var address = document.createElement('p');
-      $(address).text('address: '+place.formatted_address);
-      var rating = document.createElement('p');
-      $(rating).text('rating: '+place.rating);
-      $(element).append(name,phone,address,rating);
-    }
-  });
-}
-
-function addPlaceDetails(){
-  console.log('this doesnt work yet!');
-}
-// function addInfoWindow(marker){
-//   var infowindow = new google.maps.InfoWindow({
-//     content: 'restaurant'
-//   });
-//   infowindow.open(spain,marker);
-// }
 
 function setMapOnAll(map) {
   for (var i = 0; i < markers.length; i++) {
